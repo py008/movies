@@ -5,7 +5,7 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <td>#</td>
+      
         <td>影片</td>
         <td>剧情简介</td>
       </tr>
@@ -13,7 +13,7 @@
     <tbody>
       <% @movies.each do |movie| %>
       <tr>
-        <td>#</td>
+
         <td><%= link_to(movie.title, movie_path(movie)) %></td>
         <td><%= movie.description %><td>
             <%= link_to("Edit", edit_movie_path(movie), class: "btn btn-sm btn-default")%>

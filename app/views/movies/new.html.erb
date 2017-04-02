@@ -3,6 +3,15 @@
 
   <hr>
   <%= form_for @movie do |f| %>
+
+  <% if @movie.errors.any? %>
+  <ul>
+    <% @movie.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
+      
   影片
   <%= f.text_field :title %>
   <br>
@@ -13,4 +22,4 @@
 
   <%= f.submit "Submit", :disable_with => 'Submiting...' %>
   <% end %>
-</div>  
+</div>

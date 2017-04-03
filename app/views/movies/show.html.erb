@@ -3,6 +3,7 @@
 
     <span class="pull-right">
       <% if current_user && current_user.is_member_of?(@movie) %>
+      <%= link_to("Write a Review", new_movie_review_path(@movie), class: "btn btn-default left-right") %>
         <label class="label label-success"> 已收藏本影片 </label>
              <%= link_to("Quit Movie", quit_movie_path(@movie), method: :review, class: "btn btn-default") %>
       <% else %>
@@ -11,7 +12,7 @@
       <% end %>
     </span>
 
-    <%= link_to("Write a Review", new_movie_review_path(@movie), class: "btn btn-default pull-right") %>
+
     <% if current_user && current_user == @movie.user %>
        <%= link_to("Edit", edit_movie_path(@movie), class: "btn btn-primary pull-right") %>
     <% end %>
